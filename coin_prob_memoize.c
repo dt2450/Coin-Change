@@ -4,6 +4,18 @@
 
 unsigned long long **change_ways_array = NULL;
 
+void print_change_ways_array(long n, int c_size) {
+    printf("-----\n");
+    for(int i = 0; i < c_size; i++) {
+        for(int j = 0; j < n; j++) {
+            printf("%lld ", change_ways_array[i][j]);
+        }
+        printf("\n");
+    }
+    printf("-----\n");
+}
+
+
 unsigned long long getWays(long n, int c_size, long int* c, unsigned int index){
     unsigned long long total_ways = 0;
 
@@ -63,11 +75,18 @@ int main() {
         change_ways_array[i] = (unsigned long long *)calloc
             (n, sizeof(unsigned long long));
     }
-
+    
+    printf("Available coin denominations: \n");
+    for(int i = 0; i < m; i++) {
+        printf("%ld ", c[i]);
+    }
+    printf("\n");
 
     // Print the number of ways of making change for 'n' units using coins having the values given by 'c'
     unsigned long long ways = getWays(n, m, c, 0);
-    printf("%llu\n", ways);
+    printf("Number of ways of making change for %d cents is %llu\n", n, ways);
+
+    //print_change_ways_array(n, m); 
     
     return 0;
 }
