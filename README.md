@@ -15,9 +15,13 @@ using the denominations provided.
 For example if n = 1, then there is only ONE way and that is to have 1 cent
 coin.
 However, if n = 10 we can have 10$ in the following ways:
+
 1.) 1,1,1,1,1,1,1,1,1,1
+
 2.) 1,1,1,1,1,5
+
 3.) 5,5
+
 4.) 10
 
 So there are four ways (order doesn't matter here).
